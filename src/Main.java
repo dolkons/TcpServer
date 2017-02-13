@@ -9,6 +9,8 @@ public class Main {
             public void messageReceived(String message) {
                 System.out.println("=====================");
                 System.out.println(message);
+                System.out.println("Send to client: " + String.valueOf(Integer.parseInt(message) + 1) );
+                tcpServer.sendMessage(String.valueOf(Integer.parseInt(message) + 1));
             }
         });
 

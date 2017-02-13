@@ -28,9 +28,6 @@ public class TcpServer extends Thread {
         this.messageListener = messageListener;
     }
 
-    public static void main(String[] args) {
-    }
-
     /**
      * Close the server
      */
@@ -108,6 +105,7 @@ public class TcpServer extends Thread {
                 //sends the message to the client
                 OutputStream outputStream = client.getOutputStream();
                 bufferSender = new PrintWriter(new BufferedWriter(new OutputStreamWriter(client.getOutputStream())), true);
+                sendMessage("Hello!");
 
                 //read the message received from client
                 BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));
